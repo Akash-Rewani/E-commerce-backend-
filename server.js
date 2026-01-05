@@ -17,7 +17,7 @@ const port = process.env.PORT || 4000
 await connectDB()
 await connectCloudinary()
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://bazario-kqnlthqa1-akashrewani8-4304s-projects.vercel.app']
 
 
 app.use(express.json())
