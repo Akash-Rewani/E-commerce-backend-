@@ -9,6 +9,7 @@ import connectCloudinary from './config/cloudinary.js'
 import productRouter from './routes/productRoute.js'
 import cartRouter from './routes/cartRoute.js'
 import orderRouter from './routes/orderRoute.js'
+import contactRouter from './routes/contactRoute.js'
 
 const app = express()
 const port = process.env.PORT || 4000
@@ -16,8 +17,8 @@ const port = process.env.PORT || 4000
 await connectDB()
 await connectCloudinary()
 
-// const allowedOrigins = ['http://localhost:5173']
-const allowedOrigins = ['https://bazario-kzrikq01d-akashrewani8-4304s-projects.vercel.app']
+const allowedOrigins = ['http://localhost:5173']
+
 
 app.use(express.json())
 app.use(cookieParser())
@@ -31,6 +32,7 @@ app.use('/admin', adminRouter)
 app.use('/product', productRouter)
 app.use('/cart', cartRouter)
 app.use('/order', orderRouter)
+app.use('/contact', contactRouter)
 
 
 app.get('/', (req, res) => {
